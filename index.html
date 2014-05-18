@@ -26,16 +26,30 @@
     <script type="text/javascript">
         function prequicksort() {
             document.getElementById('canvas').innerHTML = '';
-            var lista =$("#texto").val();
-            lista= lista.split(" ");
-            var array=[];
-            for (var i = 0; i<lista.length;i++){
-                array[i]=parseInt(lista[i]);
+            var lista = $("#texto").val();
+            lista = lista.split(" ");
+            var array = [];
+            for (var i = 0; i < lista.length; i++) {
+                array[i] = parseInt(lista[i]);
             }
-            var result = quicksort(array, 0,lista.length);
-            document.getElementById('lista').innerHTML = '<h5>La lista ordenada es: </h5>' + result + '<br>';
+            var Logging = function () {
+                this.startTimer = function () {
+                    this.start = new Date().getTime();
+                };
+
+                this.stopTimer = function () {
+                    return (new Date().getTime()) - this.start;
+                };
+            };
+
+            var logging = new Logging();
+
+            logging.startTimer();
+            var result = quicksort(array, 0, lista.length);
+            document.getElementById('lista').innerHTML = '<h5>La lista ordenada es: </h5>' + result + '<br>Y su tiempo de ejecución: '+logging.stopTimer()+"ms";
         }
-        function prequicksortP(){
+
+        function prequicksortP() {
             quicksortI();
         }
     </script>
@@ -72,11 +86,11 @@
         <br>
         <br>
     </div>
-    
+
     <div class="container">
         <div id="canvas" style=" width:auto; max-width: 105%;">
 
-    </div>
+        </div>
         <br>
         <br>
         <div id="lista" style="color:#c0392b; width:auto; max-width: 105%;">
