@@ -1,0 +1,38 @@
+function ordenar(array, primero, ultimo, pivot):
+	pivot_array = array[pivot]
+	//Invertimos elementos	
+	temporal = array[a];
+	array[a] = array[b];
+	array[b] = temporal;
+	aux = primero	
+	ix=primero
+	para ix, mientras sea menor que ultimo-1, ix++:
+		si array[ix]<= pivot_array:
+			//invertimos elementos
+			temporal = array[a];
+			array[a] = array[b];
+			array[b] = temporal;
+			aux++
+		fin del si	
+	fin del para	
+	temporal = array[a];
+	array[a] = array[b];
+	array[b] = temporal;
+	return array;
+fin de ordenar
+
+function quicksort( array , primero, ultimo):
+	si ultimo-1 > primero:
+		pivot= numero_aleatio(menor que el ultimo-primero)
+		array = ordenar(array, primero, ultimo, pivot)
+		quicksort( array, primero, pivot)
+		quicksort(array , pivot+1, ultimo)
+	fin del si
+	return array
+
+fin del quicksort
+
+
+
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Project Huffman!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="css/demo.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+
+<body style="background:#ddd;">
+    <script type="text/javascript">
+        function prequicksort() {
+            document.getElementById('canvas').innerHTML = '';
+            var lista =$("#texto").val();
+            lista= lista.split(" ");
+            var array=[];
+            for (var i = 0; i<lista.length;i++){
+                array[i]=parseInt(lista[i]);
+            }
+            var result = quicksort(array, 0,lista.length);
+            document.getElementById('lista').innerHTML = '<h5>La lista ordenada es: </h5>' + result + '<br>';
+        }
+        function prequicksortP(){
+            quicksortI();
+        }
+    </script>
+
+    <div class="container">
+        <div class="header">
+            <h3 class="text-muted">Quicksort!</h3>
+        </div>
+
+        <div class="jumbotron">
+            <h1>Descripción </h1>
+            <p class="lead">El ordenamiento rápido (quicksort en inglés) es un algoritmo creado por el científico británico en computación C. A. R. Hoare basado en la técnica de divide y vencerás, que permite, en promedio, ordenar n elementos en un tiempo proporcional a n log n.</p>
+            <p>
+                Puedes descargarte el código de ejecución del algoritmo aquí
+                <a href="https://github.com/carlosgj94/huffmantry/blob/master/huffman/huffman.js"> quicksort.js</a> y ejecutarlo con Node.js.
+            </p>
+        </div>
+
+        <div id="compresion">
+
+        </div>
+
+        <div class="row marketing" style="margin-top: 90px;">
+            <div class="col-lg-8">
+                Introduzca los números a ordenar: (separados por UN espacio)
+                <br>
+                <textarea name="texto" class="form-control" id="texto"></textarea>
+                <br>
+                <br>
+                <button class="btn btn-lg btn-primary" onclick="prequicksort()">Ordenar</button>
+                <button class="btn btn-lg btn-primary" onclick="prequicksortP()">Paso a paso</button>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    
+    <div class="container">
+        <div id="canvas" style=" width:auto; max-width: 105%;">
+
+    </div>
+        <br>
+        <br>
+        <div id="lista" style="color:#c0392b; width:auto; max-width: 105%;">
+            <p id="pesos">
+            </p>
+        </div>
+
+        <div id="result" style="color:#c0392b; width:auto; max-width: 105%;">
+
+        </div>
+        <br>
+        <br>
+        <h4>Aclaraciones:</h4>
+        <p>Cabe decir, que el 100% del código de la página ha sido hecho por nosotros, sin el uso de ninguna librería externa. Esto es así debido a que lo importante para este proyecto era aprender y consideramos que realizar nosotros todo el código era mejor. Por culpa de esto (y sobre todo de los navegadores), la página puede no funcionar correctamente para lista muy largas, pues se queda sin memoria al hacer la recursividad codificando.</p>
+        <br>
+        <br>
+
+        <div class="footer">
+            <p>Trabajo realizado por Carlos González y Borja Irigoyen para la Escuela Universitaria de Informática de la UPM.</p>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+    <script src="printed.js"></script>
+</body>
+
+</html>
